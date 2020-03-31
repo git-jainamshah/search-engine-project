@@ -1,0 +1,287 @@
+<html>
+
+<head>
+    <title> Search Engine </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="favicon.png">
+
+    <script text="text/javascript">
+
+        $(document).ready(function () {
+            if (!$.browser.webkit) {
+                $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
+            }
+        });
+
+        function setCurrentText() {
+            var text = document.getElementById('txtSearch').value;
+            sessionStorage.setItem('searchText', text);
+        }
+
+        function setText() {
+            var searchText = sessionStorage.getItem('searchText');
+            document.getElementById('txtSearch').value = searchText;
+        }
+
+        // This JS Function will return the text you want to search.
+        function getText() {
+            var text = document.getElementById('txtSearch').value;
+            return text;
+        }
+
+    </script>
+    <style>
+        .title {
+            text-align: center;
+        }
+
+        .header {
+            border-radius: 0;
+            position: fixed;
+            padding: 15px;
+            background-color: #cddddd;
+            width: 100%;
+            left: 15;
+        }
+
+        .footer {
+            border-radius: 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: #cddddd;
+        }
+
+        .footer-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0px solid black;
+        }
+
+        .link-btn {
+            outline: none;
+        }
+
+        .link-btn:hover {
+            outline: none;
+            background-color: #b1c0c0;
+        }
+
+        .link-btn:focus {
+            outline: none;
+        }
+
+        .search-panel {
+            text-align: left;
+            border: 0px solid black;
+            height: 66.5%;
+            padding: 5px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .text-box {
+            border: 0px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 50%;
+            -webkit-box-shadow: -4px 10px 45px -23px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -4px 10px 45px -23px rgba(0, 0, 0, 0.75);
+            box-shadow: -4px 10px 45px -23px rgba(0, 0, 0, 0.75);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .mybtn {
+            border-radius: 10px;
+            border: solid 0px;
+            padding: 8px;
+            width: 25%;
+            font-weight: bold;
+            background-color: #439191;
+            color: white;
+        }
+
+        .mybtn:hover {
+            background-color: #67a5a5;
+        }
+
+        .cards {
+            padding: 5px;
+            border: 0px solid blue;
+            cursor: pointer;
+        }
+
+        .cards:hover {
+            background-color: #f0f0f0;
+        }
+
+        #searchPanel::-webkit-scrollbar-track {
+            /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);*/
+            background-color: transparent;
+            border-radius: 0px;
+        }
+
+        #searchPanel::-webkit-scrollbar {
+            width: 8px;
+            background-color: transparent;
+        }
+
+        #searchPanel::-webkit-scrollbar-thumb {
+            border-radius: 0px;
+            background-image: -webkit-gradient(linear,
+                    left bottom,
+                    left top,
+                    color-stop(0.44, rgb(122, 153, 217)),
+                    color-stop(0.72, rgb(73, 125, 189)),
+                    color-stop(0.86, rgb(28, 58, 148)));
+        }
+
+
+        /* width 
+        ::-webkit-scrollbar {
+            width: 10px;
+        }*/
+
+        /* Track 
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }*/
+
+        /* Handle 
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }*/
+
+        /* Handle on hover *
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }*/
+    </style>
+</head>
+
+<body onload="setText();">
+    <form action="#" method="POST" style="width: max-content;">
+        <div class="header row">
+            <a href="index.html">
+                <img src="https://media.giphy.com/media/itbG3zNhQy2Ws/giphy.gif" height="50px" width="50px" />
+            </a>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" class="text-box" id="txtSearch" placeholder="Search Any Keyword" />
+            &nbsp;&nbsp;
+            <input type="submit" class="mybtn" id="btnSubmit" value="SEARCH" onclick="setCurrentText();" />
+
+        </div>
+    </form>
+    <br /><br /><br /><br />
+    <div class="continer-fluid search-panel" id="searchPanel">
+        <strong>
+            <i>
+                (1000 Search Result in 0.002525 ms)
+            </i>
+        </strong>
+        <br /><br />
+
+        <div class="row cards">
+            <div class="col-lg-12">
+                <h3>
+                    <a href="https://www.google.com/" target="_BLANK" style="text-decoration: none;">
+                        Google
+                    </a>
+                </h3>
+                <p style="margin-top: -10px;">https://www.google.com/</p>
+            </div>
+        </div>
+
+        <div class="row cards">
+            <div class="col-lg-12">
+                <h3>
+                    <a href="https://www.google.ca/" target="_BLANK" style="text-decoration: none;">
+                        Google Canada
+                    </a>
+                </h3>
+                <p style="margin-top: -10px;">https://www.google.ca/</p>
+            </div>
+        </div>
+
+        <div class="row cards">
+            <div class="col-lg-12">
+                <h3>
+                    <a href="https://news.google.ca/" target="_BLANK" style="text-decoration: none;">
+                        Google News
+                    </a>
+                </h3>
+                <p style="margin-top: -10px;">https://news.google.ca/</p>
+            </div>
+        </div>
+
+        <div class="row cards">
+            <div class="col-lg-12">
+                <h3>
+                    <a href="https://en.wikipedia.org/wiki/Google" target="_BLANK" style="text-decoration: none;">
+                        Google - Wikipedia
+                    </a>
+                </h3>
+                <p style="margin-top: -10px;">https://en.wikipedia.org/wiki/Google</p>
+            </div>
+        </div>
+
+        <div class="row cards">
+            <div class="col-lg-12">
+                <h3>
+                    <a href="https://finance.yahoo.com/quote/GOOG/" target="_BLANK" style="text-decoration: none;">
+                        Alphabet Inc. (GOOG)
+                    </a>
+                </h3>
+                <p style="margin-top: -10px;">https://finance.yahoo.com/quote/GOOG/</p>
+            </div>
+        </div>
+
+        <div class="row cards">
+            <div class="col-lg-12">
+                <h3>
+                    <a href="https://research.google/" target="_BLANK" style="text-decoration: none;">
+                        Google Research
+                    </a>
+                </h3>
+                <p style="margin-top: -10px;">https://research.google/</p>
+            </div>
+        </div>
+
+        <div class="row cards">
+            <div class="col-lg-12">
+                <h3>
+                    <a href="https://twitter.com/google?lang=en" target="_BLANK" style="text-decoration: none;">
+                        Google (@Google) Twitter
+                    </a>
+                </h3>
+                <p style="margin-top: -10px;">https://twitter.com/google?lang=en</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="continer footer">
+        <div class="row footer-2">
+            <a href="index.html" class="btn link-btn" role="button">Search Engine</a>
+            &nbsp;
+            <a href="developers.html" class="btn link-btn" role="button">About Developers</a>
+            &nbsp;
+            <a href="project.html" class="btn link-btn" role="button">About This Project</a>
+            &nbsp;
+            <a href="references.html" class="btn link-btn" role="button">References</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<html>
+
+<head>
+    <title> Search Engine </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="favicon.png">
+
+    <script text="text/javascript">
+        $(document).ready(function () {
+            if (!$.browser.webkit) {
+                $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
+            }
+        });
+
+        function sendText() {
+            var text = document.getElementById('txtSearch').value;
+            sessionStorage.setItem('searchText', text);
+            //localStorage.setItem('flag', false);
+        }
+
+        // This JS Function will return the text you want to search.
+        function getText() {
+            var text = document.getElementById('txtSearch').value;
+            return text;
+        }
+    </script>
+    <style>
+        .title {
+            text-align: center;
+        }
+
+        .header {
+            border-radius: 0;
+        }
+
+        .footer {
+            border-radius: 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: #cddddd;
+        }
+
+        .footer-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0px solid black;
+        }
+
+        .link-btn {
+            outline: none;
+        }
+
+        .link-btn:hover {
+            outline: none;
+            background-color: #b1c0c0;
+        }
+
+        .link-btn:focus {
+            outline: none;
+        }
+
+        .search-panel {
+            text-align: center;
+        }
+
+        .text-box {
+            border: 0px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            width: 80%;
+            -webkit-box-shadow: -4px 10px 45px -23px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -4px 10px 45px -23px rgba(0, 0, 0, 0.75);
+            box-shadow: -4px 10px 45px -23px rgba(0, 0, 0, 0.75);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .mybtn {
+            border-radius: 5px;
+            border: solid 0px;
+            padding: 8px;
+            width: 50%;
+            font-weight: bold;
+            background-color: #dddce4;
+            color: black;
+        }
+
+        .mybtn:hover {
+            background-color: #c4c3cc;
+        }
+
+        #searchPanel::-webkit-scrollbar-track {
+            border: 1px solid black;
+            background-color: #F5F5F5;
+        }
+
+        #searchPanel::-webkit-scrollbar {
+            width: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #searchPanel::-webkit-scrollbar-thumb {
+            background-color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center header">
+        <h1 class="title">Search Engine</h1>
+        <h5>Every Word Matters</h5>
+    </div>
+
+    <div class="continer-fluid search-panel" id="searchPanel">
+        <form action="search.html" method="POST">
+            <img src="https://media.giphy.com/media/itbG3zNhQy2Ws/giphy.gif" height="100px" width="100px;" /> <br />
+            <h1 style="font-family: Arial Black; font-weight: bolder;"><u>S</u>EARCH WEB</h1>
+            <input type="text" class="text-box" id="txtSearch" placeholder="Search Any Keyword" /> <br /><br />
+            <input type="submit" class="mybtn" id="btnSubmit" value="SEARCH" onclick="sendText();" />
+        </form>
+    </div>
+
+    <div class="continer footer">
+        <div class="row footer-2">
+            <a href="index.html" class="btn link-btn" role="button">Search Engine</a>
+            &nbsp;
+            <a href="developers.html" class="btn link-btn" role="button">About Developers</a>
+            &nbsp;
+            <a href="project.html" class="btn link-btn" role="button">About This Project</a>
+            &nbsp;
+            <a href="references.html" class="btn link-btn" role="button">References</a>
+        </div>
+    </div>
+</body>
+
+</html>
